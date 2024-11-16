@@ -2,6 +2,7 @@
 #include <doctest.h>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "num_vector_utils.h"
 using namespace std;
 
@@ -49,3 +50,10 @@ TEST_CASE("Testing num_vector_mean"){
 	vector<double> nums = {2,3,4,2,213,51,152};
 	CHECK(61.0 == num_vector_mean(nums));
 }
+TEST_CASE("Testing num_vector_median"){
+	vector<int> nums = {9,4,1,8,5,3,7,5,3};
+	CHECK(5==num_vector_median(nums));
+
+
+}
+
