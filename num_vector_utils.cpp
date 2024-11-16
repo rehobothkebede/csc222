@@ -86,7 +86,7 @@ double num_vector_mean(const vector<double>& vec){
 	}
 	return (num_vector_sum(vec))/(vec.size());
 }
-int num_vector_median(const vector<int> vec){
+int num_vector_median(vector<int> vec){
 	int n = vec.size();
 	if(n==0){
 		return -1;
@@ -95,7 +95,7 @@ int num_vector_median(const vector<int> vec){
 	sort(vec.begin(), vec.end());
 	
 	if(n%2==0){
-		return (vec[n / 2 -1] + vec[n/2]) / 2.0;
+		return (vec[n / 2 -1] + vec[n/2]) / 2;
 	}
 	else{
 		return vec[n/2];
