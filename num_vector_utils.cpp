@@ -13,3 +13,47 @@ string render_num_vector(const vector<int>& vec) {
 	s.erase(s.length()-1,1);
 	return s;
 }
+int num_vector_sum(const vector<int>& vec){
+	int sum = 0;
+	if(vec.size()==0){
+		return sum;
+	}
+	for(int i = 0; i < vec.size(); i++){
+		sum += vec[i];
+	}
+	return sum;
+}
+int num_vector_product(const vector<int>& vec){
+	int prod = 1;
+	if(vec.size()==0){
+		return 0;
+	}
+	for(int i = 0; i<vec.size(); i++){
+		prod *= vec[i];		
+	} 
+	return prod;
+}
+vector<int> only_evens(const vector<int>& vec){
+	vector<int> even;
+	if(vec.size()==0){
+		return even;
+	}
+	for(int i=0; i<vec.size(); i++){
+		if(vec[i]%2==0){
+			even.push_back(vec[i]);
+		}	
+	}
+	return even;
+}
+vector<int> only_odds(const vector<int>& vec){
+	vector<int> odds;
+	if(vec.size()==0){
+		return odds;
+	}
+	for(int i=0; i<vec.size(); i++){
+		if(vec[i]%2!=0){
+			odds.push_back(vec[i]);
+		}
+	}
+	return odds;
+}
