@@ -69,3 +69,9 @@ vector<int> nums_between(const vector<int>& vec,int low,int high){
 	}
 	return bet;
 }
+double num_vector_mean(vector<double>& vec){
+	if(vec.size()==0){
+		return 0.0;
+	}
+	return (num_vector_sum(vec))/(vec.size());
+}
