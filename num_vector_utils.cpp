@@ -103,7 +103,7 @@ int num_vector_median(vector<int> vec){
 }
 vector<int> num_vector_mode(vector<int> vec){
 	sort(vec.begin(), vec.end());
-	int currentF = 0;
+	int currentF = 1;
 	int maxF = 0;
 	vector<int> result;	
 	if(vec.size()==0){
@@ -114,22 +114,23 @@ vector<int> num_vector_mode(vector<int> vec){
 			currentF++;
 		}
 		else{
-			if(currentF > maxF){
+			if(currentF>  maxF){
+				maxF=currentF;
 				result.clear();
-				result.push_back(vec[i-1]);			
+				result.push_back(vec[i - 1]);		
 			}
-			else if(currentF == maxF){
-				result.push_back(vec[i-1]);
+			else if (currentF == maxF) {
+    				result.push_back(vec[i - 1]);
 			}
 			currentF = 1;
 		}
 	}
-	if(currentF > maxF){
+	if(currentF> maxF){
 		result.clear();
 		result.push_back(vec.back());
 	}
-	else if(currentF == maxF){
-		result.push_back(vec.back());
-	}
+	else if (currentF == maxF) {
+    		result.push_back(vec.back());
+	}		
 	return result;
 }
