@@ -101,3 +101,35 @@ int num_vector_median(vector<int> vec){
 		return vec[n/2];
 	}
 }
+vector<int> num_vector_mode(vector<int> vec){
+	sort(vec.begin(), vec.end());
+	int currentF = 0;
+	int maxF = 0;
+	vector<int> result;	
+	if(vec.size()==0){
+		return vec;	
+	}
+	for(int i = 1; i < vec.size(); i++){
+		if(vec[i] == vec[i-1]){
+			currentF++;
+		}
+		else{
+			if(currentF > maxF){
+				result.clear();
+				result.push_back(vec[i-1]);			
+			}
+			else if(currentF == maxF){
+				result.push_back(vec[i-1]);
+			}
+			currentF = 1;
+		}
+	}
+	if(currentF > maxF){
+		result.clear();
+		result.push_back(vec.back());
+	}
+	else if(currentF == maxF){
+		result.push_back(vec.back());
+	}
+	return result;
+}

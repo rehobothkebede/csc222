@@ -11,4 +11,4 @@ vector<int> only_odds(const vector<int>&);
 vector<int> nums_between(const vector<int>&,int low,int high);
 double num_vector_mean(const vector<double>&);
 int num_vector_median(vector<int>);
-/*int num_vector_mode(cosnt vector<int>&);*/
+vector<int> num_vector_mode(vector<int>);
