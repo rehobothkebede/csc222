@@ -57,8 +57,8 @@ TEST_CASE("Testing num_vector_median"){
 
 }
 TEST_CASE("Testing num_vector_mode"){
-	vector<int> nums = {1, 2, 3, 4, 5, 6, 6, 7, 9, 9};
-	vector<int> result = {6,9};
+	vector<int> nums = {1, 1, 2, 3, 4, 5, 6, 6, 7, 9, 9};
+	vector<int> result = {1,6,9};
 	CHECK(result == num_vector_mode(nums));
 }
 
