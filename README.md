@@ -1,1 +1,1 @@
-Hi my name is Rehoboth!
+# Rehoboth's Git Repo
