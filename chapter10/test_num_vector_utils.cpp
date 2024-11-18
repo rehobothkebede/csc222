@@ -61,4 +61,9 @@ TEST_CASE("Testing num_vector_mode"){
 	vector<int> result = {1,6,9};
 	CHECK(result == num_vector_mode(nums));
 }
+TEST_CASE("Testing num_vector_mode"){
+	vector<int> nums1 = {2, 5, 7, 9, 3, 9, 9, 3, 4, 1};
+        vector<int> result1 = {9};
+        CHECK(result1 == num_vector_mode(nums1));
+}
 
