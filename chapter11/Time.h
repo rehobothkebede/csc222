@@ -11,7 +11,7 @@ struct Time {
     Time(int, int);
     Time(int, int, int);
 
-    Time operator+(const Time& other) const;
+    friend Time operator+(const Time& other) const;
 
     string to_string() const;
 };
