@@ -4,7 +4,13 @@ using namespace std;
 
 Time::Time() : hr(0), min(0), sec(0) {}
 
-Time::Time(int sec) : hr(0), min(0), sec(sec) {}
+Time::Time(int sec) : hr(0), min(0), sec(sec) {
+	if(this->sec>60){
+		this -> sec = sec%60;
+		this -> min = sec/60;
+	}
+
+}
 
 Time::Time(int hr, int min) : hr(hr), min(min), sec(0) {}
 
