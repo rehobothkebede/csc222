@@ -1,12 +1,14 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "Time.cpp"
 using namespace std;
 
 struct Time {
-	int sec, min, hr;
-	Time(sec);
-	
-	void to_string() const;
-}
+	int hr, min, sec;
+
+	Time();	
+	Time(int);
+	Time(int,int);
+	Time(int,int,int);
+	string to_string() const;
+};
