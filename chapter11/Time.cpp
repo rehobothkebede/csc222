@@ -4,12 +4,16 @@
 #include "Time.h"
 using namespace std;
 
+struct Time {
+	int hr, min, sec;
 
-class Time{
-	int hr;
-	int min;
-	int sec;
-Time::Time(){
+	Time();	
+	Time(int);
+	Time(int,int);
+	Time(int,int,int);
+	string to_string() const;
+
+Time(){
 	hr = 0;
 	min = 0;
 	sec = 0;
@@ -40,4 +44,4 @@ Time: :Time(int hr, int min, int sec){
 		return "";
 	}
 
-}
+};
