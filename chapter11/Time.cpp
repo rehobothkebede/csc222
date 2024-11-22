@@ -6,8 +6,12 @@ Time::Time() : hr(0), min(0), sec(0) {}
 
 Time::Time(int sec) : hr(0), min(0), sec(sec) {
 	if(this->sec>60){
+		this -> min = sec/60;		
 		this -> sec = sec%60;
-		this -> min = sec/60;
+	}
+	if(this->min>=60){
+		this -> hr = min/60;
+		this -> min = min%60;
 	}
 
 }
