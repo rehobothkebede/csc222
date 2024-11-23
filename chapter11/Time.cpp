@@ -1,5 +1,4 @@
 #include "Time.h"
-using namespace std;
 
 
 Time::Time() : hr(0), min(0), sec(0) {}
