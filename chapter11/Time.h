@@ -1,3 +1,5 @@
+#ifndef TIME_H
+#define TIME_H
 #include <string>
 using namespace std;
 
@@ -13,4 +15,6 @@ struct Time {
 
     string to_string() const;
 };
+#endif
+
 
