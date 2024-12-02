@@ -6,4 +6,4 @@
 
 - The design of a software product is the source code. Like architect has blue prints, a coder has source code.
 
-- Object-Oriented design, according to Uncle Bob, is a way ogranizing software by modeling real-world entities as object that contain both data and behaviors.
+- Object-Oriented design, according to Uncle Bob, is a way to edit and orginize dependencies. It also prevents code rot.

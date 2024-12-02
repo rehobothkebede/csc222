@@ -51,10 +51,10 @@ Time Time::operator+(const Time& other) const {
     return Time(totalHr, totalMin, totalSec);
 }
 
-int main() {
+/*int main() {
     Time t(3600 * 4 + 60 * 11 + 22);
     cout << "Time t is: " << t << endl;
     // should print 4:11:22
 
     return 0;
-}
+}*/
