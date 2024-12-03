@@ -9,6 +9,5 @@ MyObject::MyObject(){
 }
 
 string MyObject::to_string(){
-
-    return "This is";
+    return "This is MyObject";
 }
