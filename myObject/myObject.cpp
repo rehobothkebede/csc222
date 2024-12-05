@@ -8,7 +8,7 @@ using namespace std;
 
 
 MyObject::MyObject(int dayin, int monthin, int yearin){
-    if (dayin || monthin || yearin) {
+    if (!dayin || !monthin || !yearin) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
     day = dayin;
@@ -16,8 +16,6 @@ MyObject::MyObject(int dayin, int monthin, int yearin){
     year = yearin;
 
 }
-
-
 string MyObject::to_string(){
 
     return ::to_string(month) + "/" + ::to_string(day) + "/" + ::to_string(year);
