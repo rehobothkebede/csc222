@@ -1,15 +1,15 @@
-#ifndef MYOBJECT_H
+// #ifndef MYOBJECT_H
 #define MYOBJECT_H
 #include <string>
 using namespace std;
 
 struct MyObject {
-    string str;
+    int day, month, year;
 
     MyObject();
     string to_string();
-
-
+    MyObject(int dayin, int  monthin, int yearin);
+    string special_day();
 };
 
-#endif
+// #endif
