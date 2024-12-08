@@ -28,18 +28,19 @@ MyObject::MyObject(int dayin, int  monthin){
     }
 }
 
+bool isALeapYear(int year){
+    return (year % 4 == 0 && year % 100 !=0) || (year % 400 == 0);
+
+}
 
 MyObject::MyObject(int dayin, int  monthin, int yearin){
-    bool isALeapYear(){
-       return (yearin % 4 == 0 && year % 100 !=0) || (year % 400 == 0);
-    }
     if (!dayin || !monthin || !yearin) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
     else if (monthin < 1 || monthin > 12){
         std::cerr << "Error: Month out of range." << std::endl;
     }
-    else if((monthin == 2 && dayin > 28)){
+    else if((monthin == 2 && (dayin > 29)) || (dayin == 29 && !isALeapYear(yearin))){
         std::cerr << "Error: Invalid day for February" << std::endl;
     }
     day = dayin;
@@ -67,13 +68,11 @@ MyObject::MyObject(int dayin, int monthin, int yearin, string newevent, int rem)
     for (int i = 0; i < specmonth.size(); i++) {
         if (specmonth[i] == day){
             holder = i;
-	    remove(specdays[month-1].begin(), specdays[month-1].end(), day);
-	    specdays[month-1].pop_back();
-}
+	        specdays[month-1].erase(std::remove(specdays[month-1].begin(), specdays[month-1].end(), day), specdays[month-1].end());
+            break;
+        }
     ss = specnames[month-1][holder];
-    remove(specnames[month-1].begin(), specnames[month-1].end(), ss);
-    specnames[month-1].pop_back();
-
+    specnames[month-1].erase(std::remove(specnames[month-1].begin(), specnames[month-1].end(), ss));
 }
 
 }
@@ -91,11 +90,21 @@ string MyObject::special_day(){
     string str;
 
     for (int i = 0; i < specmonth.size(); i++) {
-	if (specmonth[i] == day){
-	    holder = i;
-}
-    str = specnames[month-1][holder];
-}
+	    if (specmonth[i] == day){
+	        holder = i;
+            break;
+        }
+    }
+    
+    if(holder != -1){
+        str = specnames[month-1][holder]; 
+    }
+    else{
+        std::cerr << "Error: No matching special day found for"
+            << month + "/" + day + "/" + year + "." << std::endl;
+        str = "Error:: No matching special day found.";
+    }
+
     return str;
 
 }
