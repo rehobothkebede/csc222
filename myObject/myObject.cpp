@@ -101,7 +101,7 @@ string MyObject::special_day(){
     }
     else{
         std::cerr << "Error: No matching special day found for"
-            << month + "/" + day + "/" + year + "." << std::endl;
+            << month <<  "/" << day << "/" << year << "." << std::endl;
         str = "Error:: No matching special day found.";
     }
 
