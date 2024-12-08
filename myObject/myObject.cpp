@@ -30,10 +30,18 @@ MyObject::MyObject(int dayin, int  monthin){
 
 
 MyObject::MyObject(int dayin, int  monthin, int yearin){
+    bool isALeapYear(){
+       return (yearin % 4 == 0 && year % 100 !=0) || (year % 400 == 0);
+    }
     if (!dayin || !monthin || !yearin) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
-
+    else if (monthin < 1 || monthin > 12){
+        std::cerr << "Error: Month out of range." << std::endl;
+    }
+    else if((monthin == 2 && dayin > 28)){
+        std::cerr << "Error: Invalid day for February" << std::endl;
+    }
     day = dayin;
     month = monthin;
     year = yearin;
