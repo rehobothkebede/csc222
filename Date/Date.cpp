@@ -5,24 +5,24 @@
 
 using namespace std;
 
-vector<vector<int>> MyObject::specdays = {{},{},{},{},{},{},{},{},{},{},{},{2,25}};
-vector<vector<string>> MyObject::specnames = {{},{},{},{},{},{},{},{},{},{},{},{"wrong","Christmas"}};
+vector<vector<int>> Date::specdays = {{},{},{},{},{},{},{},{},{},{},{},{2,25}};
+vector<vector<string>> Date::specnames = {{},{},{},{},{},{},{},{},{},{},{},{"wrong","Christmas"}};
 
 
-MyObject::MyObject(){
+Date::Date(){
     if (!day || !month || !year) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
 }
 
-MyObject::MyObject(int dayin){
+Date::Date(int dayin){
     if (!day || !month || !year) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
 }
 
 
-MyObject::MyObject(int dayin, int  monthin){
+Date::Date(int dayin, int  monthin){
     if (!day || !month || !year) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
@@ -33,7 +33,7 @@ bool isALeapYear(int year){
 
 }
 
-MyObject::MyObject(int dayin, int  monthin, int yearin){
+Date::Date(int dayin, int  monthin, int yearin){
     if (!dayin || !monthin || !yearin) {
         std::cerr << "Error: Invalid value in constructor." << std::endl;
     }
@@ -47,7 +47,7 @@ MyObject::MyObject(int dayin, int  monthin, int yearin){
     month = monthin;
     year = yearin;
 }
-MyObject::MyObject(int dayin, int monthin, int yearin, string newevent){
+Date::Date(int dayin, int monthin, int yearin, string newevent){
 
     day = dayin;
     month = monthin;
@@ -57,7 +57,7 @@ MyObject::MyObject(int dayin, int monthin, int yearin, string newevent){
     specdays[month-1].push_back(1);
 
 }
-MyObject::MyObject(int dayin, int monthin, int yearin, string newevent, int rem){
+Date::Date(int dayin, int monthin, int yearin, string newevent, int rem){
     vector<int> specmonth = specdays[month-1];
     int holder;
     string ss;
@@ -78,12 +78,12 @@ MyObject::MyObject(int dayin, int monthin, int yearin, string newevent, int rem)
 }
 
 
-string MyObject::to_string(){
+string Date::to_string(){
 
     return ::to_string(month) + "/" + ::to_string(day) + "/" + ::to_string(year);
 }
 
-string MyObject::special_day(){
+string Date::special_day(){
    
     vector<int> specmonth = specdays[month-1];    
     int holder;

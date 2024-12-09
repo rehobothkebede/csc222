@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-struct MyObject {
+struct Date {
     int day, month, year;
 
     static vector<vector<int>> specdays;
@@ -12,14 +12,14 @@ struct MyObject {
 
 
 
-    MyObject();
+    Date();
     string to_string();
-    MyObject(int dayin, int  monthin, int yearin);
-    MyObject(int dayin, int  monthin);
-    MyObject(int dayin);
+    Date(int dayin, int monthin, int yearin);
+    Date(int dayin, int  monthin);
+    Date(int dayin);
     string special_day();
-    MyObject(int dayin, int monthin, int yearin, string newevent);
-    MyObject(int dayin, int monthin, int yearin, string newevent, int rem);
+    Date(int dayin, int monthin, int yearin, string newevent);
+    Date(int dayin, int monthin, int yearin, string newevent, int rem);
 
 
 };
