@@ -1,5 +1,5 @@
 // #ifndef MYOBJECT_H
-#define MYOBJECT_H
+#define DATE_H
 #include <string>
 #include <vector>
 using namespace std;
