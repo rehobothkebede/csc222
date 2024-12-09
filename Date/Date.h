@@ -1,6 +1,7 @@
 // #ifndef MYOBJECT_H
 #define MYOBJECT_H
 #include <string>
+#include <vector>
 using namespace std;
 
 struct MyObject {
