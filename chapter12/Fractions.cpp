@@ -2,12 +2,12 @@
 #include <iostream>
 #include <string>
 
-Fraction::Fractions(){
+Fraction::Fraction(){
     this-> numerator = 0;
     this-> denominator = 1;
 }
 
-Fraction::Fractions(int numerator, int denominator){
+Fraction::Fraction(int numerator, int denominator){
     this -> numerator = numerator;
     this -> denominator = denominator;
 }

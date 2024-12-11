@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-struct Fractions{
+struct Fraction{
     int numerator, denominator;
     
     Fraction();
