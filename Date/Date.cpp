@@ -68,11 +68,11 @@ Date::Date(int dayin, int monthin, int yearin, string newevent, int rem){
     for (int i = 0; i < specmonth.size(); i++) {
         if (specmonth[i] == day){
             holder = i;
-	        specdays[month-1].erase(std::remove(specdays[month-1].begin(), specdays[month-1].end(), day), specdays[month-1].end());
+	        (std::remove(specdays.[month-1].begin(), specdays[month-1].end(), day), specdays[month-1].end());
             break;
         }
     ss = specnames[month-1][holder];
-    specnames[month-1].erase(std::remove(specnames[month-1].begin(), specnames[month-1].end(), ss));
+    (std::remove(specnames[month-1].begin(), specnames[month-1].end(), ss));
 }
 
 }
