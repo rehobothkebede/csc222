@@ -13,7 +13,7 @@ TEST_CASE("Test can create Fractions using two constructors") {
     CHECK(f2.numerator == 3);
     CHECK(f2.denominator == 4);
 }
-/*
+
 TEST_CASE("Test third Fraction constructor using a string") {
     Fraction f1("3/4");
     CHECK(f1.numerator == 3);
@@ -22,6 +22,7 @@ TEST_CASE("Test third Fraction constructor using a string") {
     CHECK(f2.numerator == 37);
     CHECK(f2.denominator == 149);
 }
+/*
 TEST_CASE("Test can render a Fraction as a string") {
     Fraction f1(17, 25);
     CHECK(f1.to_string() == "17/25");
