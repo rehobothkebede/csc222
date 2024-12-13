@@ -27,6 +27,6 @@ string Fraction::to_string() const{
         return std::to_string(numerator);
     }
     else{
-        return std::to_string(numerator) + "" + std::to_string(denominator);
+        return std::to_string(numerator) + "/" + std::to_string(denominator);
     }
 } 
