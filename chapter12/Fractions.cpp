@@ -18,10 +18,15 @@ Fraction::Fraction(string s){
        if(s[i] == '/') {
            this -> numerator = stoi(s.substr(0,i));
            this -> denominator = stoi(s.substr(i+1,s.length()-1));
-       }
+       } 
     }
 }
 
-
-
-
+string Fraction::to_string() const{
+    if(denominator==1){
+        return std::to_string(numerator);
+    }
+    else{
+        return std::to_string(numerator) + "" + std::to_string(denominator);
+    }
+} 

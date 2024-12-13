@@ -8,9 +8,10 @@ struct Fraction{
 
 
     Fraction();
-    Fraction(int numerator, int denominator);
-    Fraction(string s);
+    Fraction(int, int);
+    Fraction(string);
     
+    string to_string() const;
 };
 
 // #endif
