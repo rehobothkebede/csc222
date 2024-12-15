@@ -26,6 +26,7 @@ Fraction::Fraction(string s){
        if(s[i] == '/') {
            this -> numerator = stoi(s.substr(0,i));
            this -> denominator = stoi(s.substr(i+1));
+           break;
        }
        else{
            this -> numerator = stoi(s);
