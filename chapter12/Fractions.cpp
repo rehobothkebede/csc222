@@ -18,7 +18,7 @@ Fraction::Fraction(int numerator, int denominator){
 
 Fraction::Fraction(int numerator){
     this -> numerator = numerator;
-    this -> denominator = 0;
+    this -> denominator = 1;
 }
 
 Fraction::Fraction(string s){
