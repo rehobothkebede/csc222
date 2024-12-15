@@ -16,6 +16,11 @@ Fraction::Fraction(int numerator, int denominator){
     reduce();
 }
 
+Fraction::Fraction(int numerator){
+    this -> numerator = numerator;
+    this -> denominator = 0;
+}
+
 Fraction::Fraction(string s){
     for(int i = 0; i < s.length(); i++) {
        if(s[i] == '/') {
