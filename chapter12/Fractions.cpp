@@ -27,6 +27,10 @@ Fraction::Fraction(string s){
            this -> numerator = stoi(s.substr(0,i));
            this -> denominator = stoi(s.substr(i+1));
        }
+       else{
+           this -> numerator = stoi(s);
+           this -> denominator = 1;
+       }
     }
     if(denominator == 0){
         throw invalid_argument("Denominator can not be zero");
