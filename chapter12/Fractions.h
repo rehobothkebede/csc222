@@ -11,9 +11,9 @@ struct Fraction{
     Fraction(int, int);
     Fraction(string);
     
-
     void reduce();
     string to_string() const;
 };
 
+int gcd(int,int);
 // #endif

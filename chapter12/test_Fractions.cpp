@@ -1,6 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <iostream>
 #include <string>
+#include <numeric>
 #include <doctest.h>
 #include "Fractions.h"
 using namespace std;
@@ -36,12 +37,13 @@ TEST_CASE("Test Fractions are stored in lowest terms") {
     Fraction f2(8, 16);
     CHECK(f2.to_string() == "1/2");
 }
-/*
+
 TEST_CASE("Test gcd function") {
     CHECK(gcd(4, 14) == 2);
     CHECK(gcd(16, 12) == 4);
     CHECK(gcd(18, 27) == 9);
 }
+/*
 TEST_CASE("Test integer Fractions render properly") {
     Fraction f1(5, 1);
     CHECK(f1.to_string() == "5");

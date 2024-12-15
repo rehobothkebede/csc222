@@ -29,6 +29,16 @@ Fraction::Fraction(string s){
     reduce();
 }
 
+int gcd(int a, int b) {
+    while (b == 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return (a < 0) ? -a : a; 
+}
+
+
 void Fraction::reduce(){
     int devi = gcd(numerator,denominator);
     numerator /= devi;
