@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <numeric>
-#include <stdexcept>
+
 using namespace std;
 
 Fraction::Fraction(){
