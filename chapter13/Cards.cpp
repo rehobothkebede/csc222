@@ -4,13 +4,13 @@
 #include "Cards.h"
 using namespace std;
 
-Card::Card(Suit su,Rank ra){
-    s=su;
-    r=ra;
+Card::Card(Suit suit,Rank rank){
+    this->suit=suit;
+    this->rank=rank;
 }
 Card::Card(){
-    suit = 0;
-    rank = 0;
+    this->suit = NONE;
+    this->rank = JACK;
 }
 string Card::to_string() const{
     vector<string> suit_strings = {"Clubs", "Diamonds", "Hearts", "Spades"};
