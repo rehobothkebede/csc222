@@ -1,3 +1,5 @@
+#ifndef CARDS_H
+#define CARDS_H
 #include <iostream>
 #include <vector>
 #include <string>
@@ -18,4 +20,13 @@ struct Card{
     
     Card();
     Card(Suit, Rank);
+
+    bool operator == (const Card& other) const;
+    bool operator != (const Card& other) const;
+    bool operator < (const Card& other) const;
+    bool operator > (const Card& other) const;
+    bool operator <= (const Card& other) const;
+    bool operator >= (const Card& other) const;
 };
+
+#endif

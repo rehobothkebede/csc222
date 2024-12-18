@@ -14,7 +14,7 @@ TEST_CASE("Test can create and render Cards") {
     Card c4(SPADES, SEVEN);
     CHECK(c4.to_string() == "7 of Spades");
 }
-/*
+
 TEST_CASE("Test for comparison of Cards") {
     Card c1(HEARTS, QUEEN);
     Card c2(HEARTS, QUEEN);
@@ -30,7 +30,7 @@ TEST_CASE("Test for comparison of Cards") {
     CHECK((c6 < c5) == true);
     CHECK((c5 >= c6) == true);
 }
-
+/*
 TEST_CASE("Test create Deck with two constructors") {
     Deck d1(10);
     CHECK(d1.cards.size() == 10);
