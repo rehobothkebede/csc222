@@ -31,7 +31,7 @@ bool Card::operator < (const Card& other) const {
     if(rank == other.rank){
         return suit < other.suit;
     }
-    return rank > other.rank;
+    return rank <  other.rank;
 }
 bool Card::operator > (const Card& other) const {
     return other < *this;
