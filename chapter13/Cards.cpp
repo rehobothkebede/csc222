@@ -42,3 +42,22 @@ bool Card::operator <= (const Card& other) const {
 bool Card::operator >= (const Card& other) const {
     return !(other > *this);
 }
+
+Deck::Deck(int size)
+{
+    vector<Card> temp(size);
+    this->cards = temp;
+}
+Deck::Deck()
+{
+    vector<Card> temp(52);
+    this->cards = temp;
+    int i = 0;
+    for (Suit suit = CLUBS; suit <= SPADES; suit = Suit(suit+1)) {
+        for (Rank rank = ACE; rank <= KING; rank = Rank(rank+1)) {
+            cards[i].suit = suit;
+            cards[i].rank = rank;
+            i++;
+        }
+    }
+}
