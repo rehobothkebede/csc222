@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include "Cards.h"
+#include <sstream>
 using namespace std;
 
 Card::Card(Suit suit,Rank rank){
@@ -50,14 +51,9 @@ Deck::Deck(int size)
 }
 Deck::Deck()
 {
-    vector<Card> temp(52);
-    this->cards = temp;
-    int i = 0;
-    for (Suit suit = CLUBS; suit <= SPADES; suit = Suit(suit+1)) {
-        for (Rank rank = ACE; rank <= KING; rank = Rank(rank+1)) {
-            cards[i].suit = suit;
-            cards[i].rank = rank;
-            i++;
+    for (Suit suit = CLUBS; suit <= SPADES; suit = Suit(suit + 1)) {
+        for (Rank rank = ACE; rank <= KING; rank = Rank(rank + 1)) {
+            cards.emplace_back(rank, suit);
         }
     }
 }

@@ -2,6 +2,7 @@
 #include <doctest.h>
 #include <string>
 #include "Cards.h"
+#include <sstream>
 using namespace std;
 
 TEST_CASE("Test create Deck with two constructors") {

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -32,7 +33,7 @@ struct Card{
 struct Deck{ 
     vector<Card> card();
 
-    Deck(int);
     Deck();
+    Deck(int);    
 };
 #endif
