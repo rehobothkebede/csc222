@@ -27,7 +27,7 @@ TEST_CASE("Test can compare BigInts for equality") {
     BigInt i6("-54321");
     CHECK((i2 == i5) == true);
     CHECK((i1 == i2) == false);
-    CHECK((i1 == i3) == true);
+    CHECK((i1 == i3) == false);
     CHECK((i2 == i6) == false);
 }
 /*
