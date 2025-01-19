@@ -16,8 +16,6 @@ TEST_CASE("Test can create and render BigInts") {
     BigInt bi5("-923456789012345678901234567890");
     CHECK(bi5.to_string() == "-923456789012345678901234567890");
 }
-
-
 TEST_CASE("Test can compare BigInts for equality") {
     BigInt i1("12345");
     BigInt i2("54321");
@@ -30,7 +28,6 @@ TEST_CASE("Test can compare BigInts for equality") {
     CHECK((i1 == i3) == false);
     CHECK((i2 == i6) == false);
 }
-/*
 TEST_CASE("Test can compare BigInts for inequality") {
     BigInt i1("12345");
     BigInt i2("54321");
@@ -39,15 +36,16 @@ TEST_CASE("Test can compare BigInts for inequality") {
     BigInt i5("54321");
     BigInt i6("-54321");
     BigInt i7("12345");
-    CHECK((i2 > i5) == false);
-    CHECK((i2 > i1) == true);
-    CHECK((i4 > i1) == false);
-    CHECK((i6 > i4) == true);
+    //CHECK((i2 > i5) == false);
+    //CHECK((i2 > i1) == true);
+    //CHECK((i4 > i1) == false);
+    //CHECK((i6 > i4) == true);
     CHECK((i6 != i4) == true);
-    CHECK((i2 <= i3) == true);
-    CHECK((i2 < i3) == true);
-    CHECK((i7 >= i1) == true);
+    //CHECK((i2 <= i3) == true);
+    //CHECK((i2 < i3) == true);
+    //CHECK((i7 >= i1) == true);
 }
+/*
 TEST_CASE("Test can add BigInts") {
     BigInt i1("123");
     BigInt i2("321");

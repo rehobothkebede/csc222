@@ -16,5 +16,10 @@ class BigInt
     string to_string() const;
     
     // comparison operators
-    bool operator==(const BigInt& other) const;
+    bool operator == (const BigInt& other) const;
+    bool operator != (const BigInt& other) const;
+    bool operator < (const BigInt& other) const;
+    bool operator <= (const BigInt& other) const;
+    bool operator > (const BigInt& other) const;
+    bool operator >= (const BigInt& other) const;
 };

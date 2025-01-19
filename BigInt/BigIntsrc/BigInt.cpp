@@ -29,3 +29,7 @@ string BigInt::to_string() const
 bool BigInt::operator==(const BigInt& other) const{
     return (negative == other.negative && digits == other.digits);
 }
+
+bool BigInt::operator!=(const BigInt& other) const{
+    return (negative != other.negative || digits != other.digits);
+}
