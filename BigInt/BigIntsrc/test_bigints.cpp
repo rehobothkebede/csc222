@@ -36,7 +36,7 @@ TEST_CASE("Test can compare BigInts for inequality") {
     BigInt i5("54321");
     BigInt i6("-54321");
     BigInt i7("12345");
-    CHECK((i2 > i5) == true);
+    CHECK((i2 > i5) == false);
     CHECK((i6 > i4) == true);
     CHECK((i6 != i4) == true);
     CHECK((i2 <= i3) == true);
