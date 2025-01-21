@@ -30,6 +30,41 @@ bool BigInt::operator==(const BigInt& other) const{
     return (negative == other.negative && digits == other.digits);
 }
 
-bool BigInt::operator!=(const BigInt& other) const{
-    return (negative != other.negative || digits != other.digits);
+bool BigInt::operator!=(const BigInt& other) const{ 
+    return !(this->operator==(other));
 }
+
+bool BigInt::operator > (const BigInt& other) const{
+    if (negative && other.negative) return true;
+    if (negative && !other.negative) return false;
+    // They have the same sign
+    if (digits.size() > other.digits.size()) {
+        return negative ? false : true;
+    }
+    if (digits.size() < other.digits.size()) {
+        return negative ? true : false;
+    }
+    // They have the same number of digits 
+    for (int i = 0; i < digits.size(); i++) {
+        if (digits[i] > other.digits[i]) {
+            return negative ? false : true;
+        }
+    }
+    // They are equal
+    return false;
+}
+
+bool BigInt::operator >= (const BigInt& other) const{
+    return (this->operator > (other)) || (this->operator == (other));
+}
+
+bool BigInt::operator < (const BigInt& other) const{
+    return !(this->operator == (other)) || !(this->operator > (other));
+}
+
+bool BigInt::operator <= (const BigInt& other) const{
+    return !(this->operator > (other));
+}
+
+
+
