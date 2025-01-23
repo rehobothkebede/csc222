@@ -22,4 +22,8 @@ class BigInt
     bool operator <= (const BigInt& other) const;
     bool operator > (const BigInt& other) const;
     bool operator >= (const BigInt& other) const;
+
+    // arithmetic operators
+    BigInt operator + (const BigInt& other) const;
+    
 };

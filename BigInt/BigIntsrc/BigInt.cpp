@@ -66,5 +66,24 @@ bool BigInt::operator <= (const BigInt& other) const{
     return !(this->operator > (other));
 }
 
+BigInt BigInt::operator + (const BigInt& other) const{
+    string result = "";
+    int carry = 0;
+    
+    int i = digits.size()-1;
+    int j = other.digits.size()-1;
 
+    while(i >= 0 || j>=0 || carry){
+        int digit1 = (i >= 0) ? digits[i] - '0' : 0;
+        int digit2 = (j >= 0) ? other.digits[j] - '0' : 0;
+        
+        int sum = digit1 + digit2 + carry;
+        result.insert(result.begin(), (sum % 10) + '0');
+        carry = sum / 10;
+        
+        i--;
+        j--;
+    }
 
+    return BigInt(result);
+}
