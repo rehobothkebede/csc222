@@ -28,7 +28,11 @@ string BigInt::to_string() const
 
 BigInt BigInt::operator-() const {
     BigInt result = *this;
-    result.negative = !negative;
+    if(result.digits == "0"){
+        result.negative = false;
+    }else{
+        result.negative = !negative;
+    }
     return result;
 }
 
