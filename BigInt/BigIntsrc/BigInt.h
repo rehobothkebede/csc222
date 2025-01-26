@@ -25,5 +25,8 @@ class BigInt
 
     // arithmetic operators
     BigInt operator + (const BigInt& other) const;
+    BigInt operator - (const BigInt& other) const;
     
+    // Unary Negation
+    BigInt operator - () const;
 };

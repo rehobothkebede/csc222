@@ -26,6 +26,12 @@ string BigInt::to_string() const
     return (!negative) ? digits : "-" + digits;
 }
 
+BigInt BigInt::operator-() const {
+    BigInt result = *this;
+    result.negative = !negative;
+    return result;
+}
+
 bool BigInt::operator==(const BigInt& other) const{
     return (negative == other.negative && digits == other.digits);
 }
@@ -87,3 +93,19 @@ BigInt BigInt::operator + (const BigInt& other) const{
 
     return BigInt(result);
 }
+/*
+BigInt BigInt::operator - (const BigInt& other) const{
+    string result = "";
+    int carry = 0;
+    
+    int i = digits.size()-1;
+    int j = other.digits.size()-1;
+    if(*this >= other){
+        while(i >= 0 || j >= 0 || carry){
+            int dig1 = (i >= 0) ? digits[i] - '0' : 0;
+            int dig2 = (j >= 0) ? digits[j] - '0' : 0;                
+        }
+         
+    }   
+}
+*/
