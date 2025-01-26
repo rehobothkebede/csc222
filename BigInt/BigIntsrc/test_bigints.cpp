@@ -53,13 +53,13 @@ TEST_CASE("Test can add BigInts") {
     CHECK((i1 + i2).to_string() == "444");
     CHECK((i1 + i3).to_string() == "43333");
 }
-/*
+
 TEST_CASE("Test can subtract BigInts"){
     BigInt i1("123");
     BigInt i2("113");
     CHECK((i1 - i2).to_string() == "10");
 }
-*/
+
 
 TEST_CASE("Test unary minus opperand"){
     BigInt i1("123");

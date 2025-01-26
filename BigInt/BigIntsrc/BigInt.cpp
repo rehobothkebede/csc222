@@ -97,19 +97,52 @@ BigInt BigInt::operator + (const BigInt& other) const{
 
     return BigInt(result);
 }
-/*
+
 BigInt BigInt::operator - (const BigInt& other) const{
-    string result = "";
-    int carry = 0;
+    if (negative && other.negative) {
+        return (-other) - (-(*this));
+    }else if(negative && !other.negative){
+        BigInt result = (*this) + other;
+        result.negative = true;
+        return result;
+    } else if (!negative && other.negative) {
+        return (*this) + (-other);
+    }
     
-    int i = digits.size()-1;
-    int j = other.digits.size()-1;
-    if(*this >= other){
-        while(i >= 0 || j >= 0 || carry){
-            int dig1 = (i >= 0) ? digits[i] - '0' : 0;
-            int dig2 = (j >= 0) ? digits[j] - '0' : 0;                
+    bool resultNegative = *this < other;
+
+    const BigInt& larger = resultNegative ? other : *this;
+    const BigInt& smaller = resultNegative ? *this : other;
+
+    string result = "";
+    int borrow = 0;
+
+    int i = larger.digits.size() - 1;
+    int j = smaller.digits.size() - 1;
+
+    while (i >= 0 || j >= 0) {
+        int digit1 = (i >= 0) ? larger.digits[i] - '0' : 0;
+        int digit2 = (j >= 0) ? smaller.digits[j] - '0' : 0;
+
+        int diff = digit1 - digit2 - borrow;
+        if (diff < 0) {
+            diff += 10;
+            borrow = 1;
+        } else {
+            borrow = 0;
         }
-         
-    }   
+
+        result.insert(result.begin(), diff + '0');
+        i--;
+        j--;
+    }
+
+    while (result.size() > 1 && result[0] == '0') {
+        result.erase(result.begin());
+    }
+
+    BigInt finalResult(result);
+    finalResult.negative = resultNegative;
+    return finalResult;
 }
-*/
+
