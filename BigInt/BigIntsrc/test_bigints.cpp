@@ -61,7 +61,7 @@ TEST_CASE("Test can subtract BigInts"){
     BigInt i4("-231");
     BigInt i5("187658358741987745623843499337");
     CHECK((i1 - i2).to_string() == "10");
-    CHECK((i3 - i4).to_string() == "0");
+    CHECK((i3 - i4).to_string() == "231");
     CHECK((i5 - i3).to_string() == "187658358741987745623843499337");
 }
 
@@ -73,9 +73,3 @@ TEST_CASE("Test unary minus opperand"){
     CHECK((-i3).to_string() == "0");
     CHECK((-i2) == i1);
 }
-
-
-
-
-
-
