@@ -69,7 +69,20 @@ bool BigInt::operator >= (const BigInt& other) const{
 }
 
 bool BigInt::operator < (const BigInt& other) const{
-    return !(this->operator == (other)) || !(this->operator > (other));
+    if (negative != other.negative){
+        return negative; 
+    } 
+
+    if (digits.size() != other.digits.size()){
+        return (digits.size() < other.digits.size()) != negative;
+    }
+
+    for (size_t i = 0; i < digits.size(); i++){
+        if (digits[i] != other.digits[i]) {
+            return (digits[i] < other.digits[i]) != negative;
+        }
+    }
+    return false;
 }
 
 bool BigInt::operator <= (const BigInt& other) const{
