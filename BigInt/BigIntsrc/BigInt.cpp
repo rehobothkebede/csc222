@@ -177,3 +177,11 @@ BigInt BigInt::simpleMultiply(const BigInt& other1, const BigInt& other2) const{
 
     return BigInt(::to_string(num1 * num2));
 }
+
+BigInt BigInt::shiftLeft(int shifts) const{
+    if(digits == "0"){
+        return BigInt("0");
+    }
+
+    return BigInt(digits + string(shifts, '0'));
+}

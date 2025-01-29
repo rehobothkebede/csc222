@@ -92,6 +92,5 @@ TEST_CASE("TEST SHIFT LEFT FOR karatsuba multiplication"){
     int numofShifts = 2;
     BigInt i1("123");
 
-    CHECK(i1.shiftLeft(i).to_string() == "12300");
-
+    CHECK(i1.shiftLeft(numofShifts).to_string() == "1230");
 }
