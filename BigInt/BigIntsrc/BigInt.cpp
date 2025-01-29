@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "BigInt.h"
+#include <cmath>
 using namespace std;
 
 BigInt::BigInt()
@@ -69,16 +70,16 @@ bool BigInt::operator >= (const BigInt& other) const{
 }
 
 bool BigInt::operator < (const BigInt& other) const{
-    if (negative != other.negative){
+    if(negative != other.negative){
         return negative; 
     } 
 
-    if (digits.size() != other.digits.size()){
+    if(digits.size() != other.digits.size()){
         return (digits.size() < other.digits.size()) != negative;
     }
 
-    for (size_t i = 0; i < digits.size(); i++){
-        if (digits[i] != other.digits[i]) {
+    for(size_t i = 0; i < digits.size(); i++){
+        if(digits[i] != other.digits[i]) {
             return (digits[i] < other.digits[i]) != negative;
         }
     }
@@ -159,3 +160,20 @@ BigInt BigInt::operator - (const BigInt& other) const{
     return finalResult;
 }
 
+BigInt BigInt::operator * (const BigInt &other) const{
+    if(*this == BigInt("0") || other == BigInt("0")){
+        return BigInt("0");
+    } 
+    
+    if(digits.size() == 1 || other.digits.size() == 1){
+        return simpleMultiply(*this, other);
+    }
+}
+
+
+BigInt BigInt::simpleMultiply(const BigInt& other1, const BigInt other2) const{
+    int num1 = other1.digits[0] - '0';
+    int num2 = other2.digits[0] - '0';
+
+    return BigInt(to_string(num1 * num2));
+}

@@ -73,3 +73,17 @@ TEST_CASE("Test unary minus opperand"){
     CHECK((-i3).to_string() == "0");
     CHECK((-i2) == i1);
 }
+
+TEST_CASE("Test can multiply BigInts"){
+    BigInt i1("9");
+    BigInt i2("9");
+
+    CHECK((i1 * i2).to_string() == "81");
+}
+
+TEST_CASE("SIMPLE MULTIPLY tests"){
+    BigInt i1("9");
+    BigInt i1("9");
+
+    CHECK((i1 * i2).to_string() == "81");
+}

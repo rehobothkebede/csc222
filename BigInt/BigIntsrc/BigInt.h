@@ -26,7 +26,10 @@ class BigInt
     // arithmetic operators
     BigInt operator + (const BigInt& other) const;
     BigInt operator - (const BigInt& other) const;
+    BigInt operator * (const BigInt& other) const;
     
+    BigInt simpleMultiply(const BigInt&, const BigInt&) const;
+        
     // Unary Negation
     BigInt operator - () const;
 };
