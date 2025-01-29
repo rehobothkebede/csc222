@@ -167,6 +167,22 @@ BigInt BigInt::operator * (const BigInt &other) const{
     if(digits.size() == 1 || other.digits.size() == 1){
         return simpleMultiply(*this, other);
     }
+     int n = max(digits.size(), other.digits.size());
+     int m = n / 2;
+
+     BigInt X1 = BigInt(digits.substr(0, digits.size() - m));
+     BigInt X0 = BigInt(digits.substr(digits.size() - m));
+     BigInt Y1 = BigInt(other.digits.substr(0, other.digits.size() - m));
+     BigInt Y0 = BigInt(other.digits.substr(other.digits.size() - m));
+     BigInt P1 = X1 * Y1;
+     BigInt P2 = X0 * Y0;
+     BigInt P3 = (X1 + X0) * (Y1 + Y0);
+
+     BigInt result = (P1.shiftLeft(2 * m)) + ((P3 - P1 - P2).shiftLeft(m)) + P2;
+
+     result.negative = (negative != other.negative);
+
+    return result;
     
 }
 

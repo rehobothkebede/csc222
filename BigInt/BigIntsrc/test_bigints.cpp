@@ -75,10 +75,10 @@ TEST_CASE("Test unary minus opperand"){
 }
 
 TEST_CASE("Test can multiply BigInts"){
-    BigInt i1("9");
-    BigInt i2("9");
+    BigInt i1("10000000000000000000000000000000000");
+    BigInt i2("10000000000000000000000000000000000");
 
-    CHECK((i1 * i2).to_string() == "81");
+    CHECK((i1 * i2).to_string() == "10");
 }
 
 TEST_CASE("SIMPLE MULTIPLY tests"){
@@ -92,5 +92,5 @@ TEST_CASE("TEST SHIFT LEFT FOR karatsuba multiplication"){
     int numofShifts = 2;
     BigInt i1("123");
 
-    CHECK(i1.shiftLeft(numofShifts).to_string() == "1230");
+    CHECK(i1.shiftLeft(numofShifts).to_string() == "12300");
 }
