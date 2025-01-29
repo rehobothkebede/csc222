@@ -87,3 +87,11 @@ TEST_CASE("SIMPLE MULTIPLY tests"){
 
     CHECK((i1 * i2).to_string() == "81");
 }
+
+TEST_CASE("TEST SHIFT LEFT FOR karatsuba multiplication"){
+    int numofShifts = 2;
+    BigInt i1("123");
+
+    CHECK(i1.shiftLeft(i).to_string() == "12300");
+
+}
