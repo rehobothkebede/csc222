@@ -83,7 +83,7 @@ TEST_CASE("Test can multiply BigInts"){
 
 TEST_CASE("SIMPLE MULTIPLY tests"){
     BigInt i1("9");
-    BigInt i1("9");
+    BigInt i2("9");
 
     CHECK((i1 * i2).to_string() == "81");
 }

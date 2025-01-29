@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "BigInt.h"
-#include <cmath>
 using namespace std;
 
 BigInt::BigInt()
@@ -163,17 +162,18 @@ BigInt BigInt::operator - (const BigInt& other) const{
 BigInt BigInt::operator * (const BigInt &other) const{
     if(*this == BigInt("0") || other == BigInt("0")){
         return BigInt("0");
-    } 
-    
+    }
+
     if(digits.size() == 1 || other.digits.size() == 1){
         return simpleMultiply(*this, other);
     }
+    
 }
 
 
-BigInt BigInt::simpleMultiply(const BigInt& other1, const BigInt other2) const{
+BigInt BigInt::simpleMultiply(const BigInt& other1, const BigInt& other2) const{
     int num1 = other1.digits[0] - '0';
     int num2 = other2.digits[0] - '0';
 
-    return BigInt(to_string(num1 * num2));
+    return BigInt(::to_string(num1 * num2));
 }
