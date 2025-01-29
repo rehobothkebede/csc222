@@ -159,6 +159,8 @@ BigInt BigInt::operator - (const BigInt& other) const{
     return finalResult;
 }
 
+
+// https://www.youtube.com/watch?v=cCKOl5li6YM
 BigInt BigInt::operator * (const BigInt &other) const{
     if(*this == BigInt("0") || other == BigInt("0")){
         return BigInt("0");
