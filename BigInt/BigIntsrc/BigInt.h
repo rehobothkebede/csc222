@@ -29,7 +29,8 @@ class BigInt
     BigInt operator * (const BigInt& other) const;
     
     BigInt simpleMultiply(const BigInt&, const BigInt&) const;
-    BigInt shiftLeft(int) const;        
+    BigInt shiftLeft(int) const;
+
     // Unary Negation
     BigInt operator - () const;
 };

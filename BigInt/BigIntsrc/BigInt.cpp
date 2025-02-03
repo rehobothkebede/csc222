@@ -176,15 +176,15 @@ BigInt BigInt::operator * (const BigInt &other) const{
      BigInt X0 = BigInt(digits.substr(digits.size() - m));
      BigInt Y1 = BigInt(other.digits.substr(0, other.digits.size() - m));
      BigInt Y0 = BigInt(other.digits.substr(other.digits.size() - m));
-     BigInt P1 = X1 * Y1;
-     BigInt P2 = X0 * Y0;
-     BigInt P3 = (X1 + X0) * (Y1 + Y0);
+     BigInt Z1 = X1 * Y1;
+     BigInt Z2 = X0 * Y0;
+     BigInt Z3 = (X1 + X0) * (Y1 + Y0);
 
-     BigInt result = (P1.shiftLeft(2 * m)) + ((P3 - P1 - P2).shiftLeft(m)) + P2;
+     BigInt result = (Z1.shiftLeft(2 * m)) + ((Z3 - Z1 - Z2).shiftLeft(m)) + Z2;
 
      result.negative = (negative != other.negative);
 
-    return result;
+     return result;
     
 }
 
